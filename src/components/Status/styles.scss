@@ -1,0 +1,79 @@
+@import "../../styles/variable";
+
+@mixin fl-status-size-bold($size) {
+  font-size: $size;
+  font-weight: 500;
+}
+@mixin fl-status-color($bg-color, $color) {
+  background-color: $bg-color;
+  color: $color;
+}
+
+.fl_ {
+  &status {
+    border-radius: 5px;
+    padding: 5px 7.7px 5px 23.5px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      margin-top: auto;
+      margin-bottom: auto;
+      left: 7.6px;
+      top: 0;
+      bottom: 0;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background-color: $line-stroke;
+    }
+    &.big {
+      font-size: 16px;
+    }
+    &.big-bold {
+      @include fl-status-size-bold(16px);
+    }
+    &.medium {
+      font-size: 12px;
+    }
+    &.medium-bold {
+      @include fl-status-size-bold(12px);
+    }
+    &.small {
+      font-size: 9px;
+    }
+    &.small-bold {
+      @include fl-status-size-bold(9px);
+    }
+  }
+  &_success {
+    @include fl-status-color($subtle-green, $success);
+  }
+  &_success::after {
+    background-color: $success;
+  }
+  &_red {
+    @include fl-status-color($subtle-red, $red);
+  }
+  &_red::after {
+    background-color: $red;
+  }
+  &_light {
+    @include fl-status-color(unset, $success);
+  }
+  &_light::after {
+    background-color: $success;
+  }
+  &_light-success {
+    @include fl-status-color(unset, $subtle-black);
+  }
+  &_light-success::after {
+    background-color: $success;
+  }
+  &_light-red {
+    @include fl-status-color(unset, $subtle-black);
+  }
+  &_light-red::after {
+    background-color: $red;
+  }
+}

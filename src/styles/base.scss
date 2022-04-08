@@ -1,0 +1,36 @@
+@import "boxicons";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "variable";
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: $blue;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $subtle-black;
+}
+body {
+  color: $subtle-black;
+  background: $background;
+}
+.fl_navbar {
+  background: $white;
+}
+.text-dark {
+  color: $subtle-black !important;
+}
+.bx {
+  &.bx-big {
+    font-size: 35px;
+  }
+}
+.ic-menu {
+  display: contents;
+}
